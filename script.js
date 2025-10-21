@@ -1,7 +1,9 @@
 const botaoMostraPalavras = document.querySelector("#botao-palavrachave");
 
-botaoMostraPalavras.addEventListener("click", MostraPalavrasChave)
+botaoMostraPalavras.addEventListener("click", MostraPalavrasChave);
 
-function MostraPalavrasChave(){
-    alert("fui clicado!");
+function MostraPalavrasChave() {
+    const texto = document. querySelector("#entrada-de-texto").Value;
+    const camporesultado = document.querySelector("#resultado-palavrachave");
+    const palavras = texto.split() 
 }
