@@ -3,7 +3,7 @@ const botaoMostraPalavras = document.querySelector("#botao-palavrachave");
 botaoMostraPalavras.addEventListener("click", MostraPalavrasChave);
 
 function MostraPalavrasChave() {
-    const texto = document.querySelector("#entrada-de-texto").Value;
+    const texto = document.querySelector("#entrada-de-texto").value;
     const campoResultado = document.querySelector("#resultado-palavrachave");
     const palavras = texto.split(" ");
 
