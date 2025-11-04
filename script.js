@@ -1,36 +1,49 @@
 const botaoMostraPalavras = document.querySelector("#botao-palavrachave");
 
-botaoMostraPalavras.addEventListener("click", MostraPalavrasChave);
+botaoMostraPalavras.addEventListener("click", mostraPalavrasChave);
 
-function MostraPalavrasChave() {
+function mostraPalavrasChave() {
     const texto = document.querySelector("#entrada-de-texto").value;
     const campoResultado = document.querySelector("#resultado-palavrachave");
-    const palavras = processatexto(texto)
+    const palavrasChave = processaTexto(texto);
 
     campoResultado.textContent = palavrasChave.join(", ")
 }
 
-function processatexto(texto) {
-    let palavras = texto.slipt(/\P{L}+/u)
+function processaTexto(texto) {
+    let palavras = texto.split(/\P{L}+/u);
 
-    const frequencias = contaFrequencias(palavras)
-    let ordenadas = Object.keys(frequencias).sort(ordenaPalavra)
+    const frequencias = contaFrequencias(palavras);
+    let ordenadas = Object.keys(frequencias).sort(ordenaPalavras);
 
-    function ordenaPalavra(p1, p2) {
+    function ordenaPalavras(p1, p2) {
         return frequencias[p2] - frequencias[p1]
     }
-    return ordenadas.slice(0, 10)
+    return ordenadas.slice(0, 10);
+
+
 }
+
 function contaFrequencias(palavras) {
-let frequencias = {};
+
+    let frequencias = {};
+
     for (let i of palavras) {
         frequencias[i] = 0;
+
         for (let j of palavras) {
             if (i == j) {
-                frequencias(i)++;
+                frequencias[i]++;
             }
         }
+
     }
 
-    return palavras
+    return palavras;
+
+
+
+
+
 }
+
