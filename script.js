@@ -14,7 +14,7 @@ function procesatexto(texto) {
     let palavras = texto.slipt(/\P{L}+/u)
 
 const frequencias = contaFrequencias(palavras)
- let ordenadas = Object.keys(frequencias).sort(ordenaPalavras)
+ let ordenadas = Object.keys(frequencias).sort(ordenaPalavra)
  
   function ordenaPalavra(p1,p2){
   return frequencias [p2] -frequencias[p1]
